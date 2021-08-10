@@ -9,4 +9,4 @@ Feature: Login as different users
  Scenario: login as different usertype
    Given the user logged in as "userType"
    Then the user should be able to login
-   And the title contains "Dashboad"
+   And the title contains "Dashboard"

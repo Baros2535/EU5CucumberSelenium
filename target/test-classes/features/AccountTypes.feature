@@ -8,8 +8,8 @@ Feature: Account types
   Scenario: Sales manager user
     Given the user logged in as "sales manager"
     When the user navigates from "Customers" to "Accounts"
-    Then the title contains "Accounts - CustomerS"
-  @wip
+    Then the title contains "Accounts - Customers"
+  @wip  @smoke
   Scenario:Store manager user
     Given the user logged in as "store manager"
     When the user navigates from "Customers" to "Contacts"

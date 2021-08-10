@@ -2,7 +2,6 @@ package com.vytrack.step_definitions;
 
 import com.vytrack.pages.ContactsPage;
 import com.vytrack.pages.DashboardPage;
-import com.vytrack.utilities.BrowserUtils;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 

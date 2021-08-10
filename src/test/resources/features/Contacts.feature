@@ -35,11 +35,11 @@ Feature: Contacts page
       | System             |
 
 
-    Scenario: login as a given user
-      Given the user is on the login page
-       When the user logs in using following credentials
-      |username|user10|
-      |password|UserUser123|
-      |firstname|Brenden|
-      |lastname|Schneider|
-      Then the user should be able to login
+  Scenario: login as a given user
+    Given the user is on the login page
+    When the user logs in using following credentials
+      | username  | user10      |
+      | password  | UserUser123 |
+      | firstname | Brenden     |
+      | lastname  | Schneider   |
+    Then the user should be able to login

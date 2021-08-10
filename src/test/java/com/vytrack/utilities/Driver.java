@@ -20,8 +20,8 @@ public class Driver {
    private static InheritableThreadLocal<WebDriver> driver=new InheritableThreadLocal<>(); //parallel
 
     public static WebDriver get() {
-        if (driver == null) {
-            String browser = ConfigurationReader.get("browser");
+        if (driver.get() == null) {
+        String browser=System.getProperty("browser")!=null? System.getProperty("browser"): ConfigurationReader.get("browser");
 
             switch (browser) {
                 case "chrome":

@@ -1,7 +1,6 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.CalendarEventsPage;
-import com.vytrack.pages.DashboardPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
@@ -56,14 +55,23 @@ public class LoginStepDefs {
     }
     @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
-        the_user_is_on_the_login_page();
-    if (userType.toLowerCase().equals("sales manager")){the_user_enters_the_sales_manager_information();}
-    else if (userType.toLowerCase().equals("store manager")) { the_user_enters_the_store_manager_information();}
-    else if (userType.toLowerCase().equals("driver")){ the_user_enters_the_driver_information();  }
-    else{
-        System.out.println("invalid 'Usertype'");
-    }
 
+    Driver.get().get(ConfigurationReader.get("url"));
+        String username =null;
+        String password =null;
+
+        if(userType.equals("driver")){
+            username = ConfigurationReader.get("driver_username");
+            password = ConfigurationReader.get("driver_password");
+        }else if(userType.equals("sales manager")){
+            username = ConfigurationReader.get("sales_manager_username");
+            password = ConfigurationReader.get("sales_manager_password");
+        }else if(userType.equals("store manager")){
+            username = ConfigurationReader.get("store_manager_username");
+            password = ConfigurationReader.get("store_manager_password");
+        }
+
+        new LoginPage().login(username,password);
 
     }
 
