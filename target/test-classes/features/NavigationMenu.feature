@@ -1,6 +1,6 @@
 @Navigation_Menu
 Feature:Navigation From Menu to Menu
-  @Navigating_Vehicles
+  @Navigating_Vehicles @smoke
   Scenario: Navigate from Fleet Menu to Vehicles Menu
     Given the user is on the login page
     And   the user enters the sales manager information

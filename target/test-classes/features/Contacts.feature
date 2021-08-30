@@ -13,7 +13,7 @@ Feature: Contacts page
     When the user navigates from "Activities" to "Calendar Events"
     Then the title contains "Calendar"
 
-
+  @smoke
   Scenario: Menu Options Driver
     Given the user logged in as "driver"
     Then the user should see following options
@@ -43,3 +43,11 @@ Feature: Contacts page
       | firstname | Brenden     |
       | lastname  | Schneider   |
     Then the user should be able to login
+
+
+    Scenario: Contacts test with email
+      Given the user logged in as "sales manager"
+      And  the user navigates from "Customers" to "Contacts"
+      When the user clicks the "mbrackstone9@example.com" from contacts
+      Then the information should be same with database
+

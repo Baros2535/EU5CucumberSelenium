@@ -53,6 +53,7 @@ public class LoginStepDefs {
         BrowserUtils.waitFor(2);
         Assert.assertTrue(actualTitle.contains(expectedTitle));
     }
+
     @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
 

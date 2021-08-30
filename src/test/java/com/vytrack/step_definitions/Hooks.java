@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.utilities.DBUtils;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -10,8 +11,8 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks {
     @Before(value = "@db",order = 2)
     public void setUpDB(){
-        System.out.println("DB is open");
-
+        System.out.println("DB is opened");
+        DBUtils.createConnection();
     }
 
     @Before(order=1)
@@ -21,7 +22,9 @@ public class Hooks {
 
     @After(value = "@db",order = 2)
     public void closeDB(){
-        System.out.println("db is close");
+
+        System.out.println("DB is closed");
+        DBUtils.destroy();
     }
 
     @After(order = 1)

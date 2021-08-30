@@ -2,6 +2,7 @@ package com.vytrack.step_definitions;
 
 import com.vytrack.pages.ContactsPage;
 import com.vytrack.pages.DashboardPage;
+import com.vytrack.utilities.BrowserUtils;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
@@ -40,6 +41,7 @@ public class NavigationMenuStepDefs {
     @When("the user navigates from {string} to {string}")
     public void the_user_navigates_from_to(String tab, String module) {
         new DashboardPage().navigateToModule(tab,module);
+        BrowserUtils.waitFor(2);
 
     }
 
